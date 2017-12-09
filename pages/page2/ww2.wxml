@@ -1,0 +1,9 @@
+<view wx:for="{{list}}" bindtap="detail" class="wrap clearfix">
+    <view class="sectionOne fl">
+        <image class="leftimg" src="{{item.imgsrc}}"></image>
+    </view>
+    <view class="sectionTwo fl">
+        <view class="flex-title">{{index+1}}{{item.title}}</view>
+        <view class="flex-content">{{item.content}}</view>
+    </view>
+</view>

@@ -1,0 +1,92 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <input bindblur="changeName" placeholder-class="placeholder-cls" id="name" class="ipt" type='text' placeholder="姓名" auto-focus/>
+  </view>
+  <view class="section">
+    <input bindblur="changePhone" placeholder-class="placeholder-cls" id="phone" class="ipt" type='number' placeholder="手机号"/>
+  </view>
+
+  <view class="section">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio">
+        <radio value="男" checked=""/> 男
+      </label>
+      <label class="radio">
+        <radio value="女" checked=""/> 女
+      </label>
+      <label class="radio">
+        <radio value="其他" checked=""/> 其他
+      </label>
+    </radio-group>
+  </view>
+  <view class="checklist clearfix">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="开朗" checked=""/> 开朗
+      </label>
+      <label class="checkbox">
+        <checkbox value="逗逼" checked=""/> 逗逼
+      </label>
+      <label class="checkbox">
+        <checkbox value="沉稳" checked=""/> 沉稳
+      </label>
+      <label class="checkbox">
+        <checkbox value="狡诈" checked=""/> 狡诈
+      </label>
+      <label class="checkbox">
+        <checkbox value="多疑" checked=""/> 多疑
+      </label>
+      <label class="checkbox">
+        <checkbox value="呆萌" checked=""/> 呆萌
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="section" style="height:80px;">
+    <textarea bindblur="blurArea" class="textarea" maxlength="10" placeholder="简介" />
+  </view>
+
+  <view class="section" style="height:32px;">
+      <switch checked bindchange="switchChange"/>
+  </view>
+
+  <view class="section" style="height:80px;">
+    <view style="height:30px;" class="section__title">地区选择器</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        当前选择：{{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class="section" style="height:80px;">
+    <view style="height:30px;" class="section__title">时间选择器</view>
+    <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+      <view class="picker">
+        当前选择: {{time}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="section" style="height:80px;">
+    <view style="height:30px;" class="section__title">日期选择器</view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+  </view>
+
+  <view class='section' style="height:auto;">
+    <!--监听按钮-->
+    <button type="primary" bindtap="listenerButtonChooseImage">点击我选择相册</button>
+    <!--通过数据绑定的方式动态获取js数据-->
+    <image id="prevImg" src="{{source}}" mode="aspecFill" style="margin-top:20px;width:100%;display:{{display}}"/>
+  </view>
+
+  <view class="section">
+    <button type="primary" disabled='{{disable}}' form-type="submit" hover-class="other-button-hover"> 提交 </button>
+  </view>
+  <view class="section">
+    <button type="default" form-type="reset" hover-class="other-button-hover" style="margin-bottom:20px"> 重置 </button>
+  </view>
+</form>

@@ -1,19 +1,4 @@
 /**index.wxss**/
-.container{
-  background-color: #f8f8f8;
-}
-.sidebar{
-  width: 60rpx;
-  position: fixed;
-  right: 40rpx;
-  top: 40rpx;
-  background-color: #f4f4f4;
-}
-.setting, .wechat{
-  width: 30px;
-  height: 30px;
-  margin-bottom: 10px;
-}
 .userinfo {
   display: flex;
   flex-direction: column;

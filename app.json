@@ -1,13 +1,51 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/list/list",
+    "pages/detail/detail",
     "pages/logs/logs",
-    "pages/list/list"
+    "pages/page1/ww1",
+    "pages/page2/ww2",
+    "pages/setting/setting"
   ],
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#09BB07",
+    "borderStyle": "white",
+    "backgroundColor": "#000",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "image/yzd.png",
+      "selectedIconPath": "image/yzd.png",
+      "text": "云知道"
+    }, {
+      "pagePath": "pages/page1/ww1",
+      "iconPath": "image/gfsc.png",
+      "selectedIconPath": "image/gfsc.png",
+      "text": "官方商城"
+    }, {
+      "pagePath": "pages/page2/ww2",
+      "iconPath": "image/hwg.png",
+      "selectedIconPath": "image/hwg.png",
+      "text": "海外购"
+    }, {
+      "pagePath": "pages/setting/setting",
+      "iconPath": "image/yxh.png",
+      "selectedIconPath": "image/yxh.png",
+      "text": "悅享荟"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "iconPath": "image/more.png",
+      "selectedIconPath": "image/more.png",
+      "text": "更多"
+    }],
+    "position":"bottom"
+  },
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "backgroundTextStyle":"red",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "快约车",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh" : "true"
   }
 }

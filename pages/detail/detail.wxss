@@ -1,0 +1,48 @@
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blur;
+}
+.section{
+  display: block;
+  padding-top: 11px;
+  height: 46px;
+  line-height: 46px;
+  margin: auto;
+  width: 89%;
+}
+.checklist{
+  display: block;
+  padding-bottom: 11px;
+  line-height: 30px;
+  margin: auto;
+  width: 89%;
+}
+.section input.ipt{
+  height: 46px;
+  line-height: 46px;
+  background-color: #F7F7F7;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+.placeholder-cls{
+  color: #ddd;
+}
+.radio{
+  margin-right: 10px;
+}
+.checkbox{
+  float: left;
+  width: 33.33%;
+}
+.textarea{
+  height: 60px;
+  width: auto;
+  display: block;
+  background-color: #F7F7F7;
+  border-radius: 6px;
+  padding: 10px;
+}

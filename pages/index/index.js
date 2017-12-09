@@ -1,60 +1,48 @@
 //index.js
 //获取应用实例
-const app = getApp()
-
+var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '我是王伟伟',
     userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    settingImg: "../../image/setting.png",
+    wechatImg: "../../image/wechat.png"
   },
-  //事件处理函数
+  //点击头像
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: "/pages/detail/detail"
     })
   },
-  //去列表
-  goList: function() {
+  //点击微信按钮
+  wechatTap: function(){
+    wx.showModal({
+      title: '提示',
+      content: '您点击了微信按钮',
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定');
+        }
+      }
+    })
+  },
+  //点击设置按钮
+  settingTap: function(){
+    console.log('werqer')
     wx.navigateTo({
-      url: '../list/list'
+      url: '/pages/list/list'
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function(userInfo){
+      //更新数据
+      console.log(userInfo)
+      that.setData({
+        userInfo:userInfo
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })
